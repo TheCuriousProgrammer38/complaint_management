@@ -48,9 +48,9 @@ include 'header.php';
           aria-haspopup="true" aria-expanded="false" href="#">Profile</a>
           <div class="dropdown-menu dropdown-menu-right dropdown-default"
           aria-labelledby="profileDropdown">
-          <a class="dropdown-item" href="viewprofile.php">View Profile</a>
+          <a class="dropdown-item" href="viewprofile.php">Dashboard</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Logout</a>
+          <a class="dropdown-item" href="logout.php">Logout</a>
         </div>
       </li>
     </ul>

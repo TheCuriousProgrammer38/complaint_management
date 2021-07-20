@@ -15,15 +15,16 @@ body{
   margin: 10px 10px 10px 10px;
   background-color: #f1f2f6;
   border: 1px solid #f1f2f6;
-  padding: 0px 0px 10px 10px;
 }
 
-.viewpage_title{
-  text-align: center;
-  color: #fff;
-  font-size: 60px;
+.reviews-members .media .mr-3 {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
 }
-
+.rounded-pill {
+    border-radius: 50rem!important;
+}
 </style>
 </head>
 <body>
@@ -64,7 +65,20 @@ body{
   </div>
 </nav>
 
-<h1 class="viewpage_title">Suggestions</h1>
+<div class="container">
+<div class="col-md-12">
+    <div class="offer-dedicated-body-left">
+        <div class="tab-content" id="pills-tabContent">
+            
+            
+            <div class="tab-pane fade active show" id="pills-reviews" role="tabpanel" aria-labelledby="pills-reviews-tab">
+                <div id="ratings-and-reviews" class="bg-white rounded shadow-sm p-4 mb-4 clearfix">
+                    <h5 class="mb-0 pt-1">Suggestions</h5>
+                </div>
+                
+
+                <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
+                    <h5 class="mb-1">All Suggestions</h5>
 
 <?php
   include('connection.php');
@@ -75,15 +89,33 @@ body{
     $t = $a["suggestion_type"];
     $c = $a["suggestion"];
     $d = $a["date"];
-
-    echo "<div class=\"row\"><div class='col-md-4'>";
-    echo "<div class=\"img-thumbnail\">";
-
-    echo "<div class=\"caption\">";
-    echo "<b>$e</b><br>$t<br>$d<br><hr>$c</div></div></div></div>";
-  }
   ?>
-
+<div class="reviews-members pt-4 pb-4">
+    <div class="media">
+        <a href="#"><img alt="Generic placeholder image" src="img/profile_img.png" class="mr-3 rounded-pill"></a>
+        <div class="media-body">
+            <div class="reviews-members-header">
+                <h6 class="mb-1"><?php echo $e; ?></h6>
+                <h6 class="mb-1"><?php echo $d; ?></h6>
+                <p class="text-gray"><?php echo $t; ?></p>
+            </div>
+            <div class="reviews-members-body">
+                <p><?php echo $c; ?></p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    </div>
+      <?php
+      }
+      ?>
+    </div>
+               
+    </div>
+    </div>
+    </div>
+</div>
+</div>
 </body>
 </html>
 
