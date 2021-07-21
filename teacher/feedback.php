@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <?php
+session_start();
 include 'header.php';
 ?>
 <link rel="stylesheet" href="stylesignin.css">
@@ -58,23 +59,13 @@ body{
           <div class="card-body">
             <h5 class="card-title text-center"><b>Feedback</b></h5>
             <form class="form-signin" method="POST">
-            <div class="form-label-group">
-                <input type="name" name="name" id="inputName" class="form-control" placeholder="Name" required>
-                <label for="inputName">Name</label>
-              </div>
-
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required>
-                <label for="inputEmail">Email address</label>
-              </div>
-
               <div class="form-label-group">
                 <textarea style="border-radius:10px;" rows="7" type="text" name="feed" id="inputMsg" class="form-control" placeholder="Enter Feedback Message..." required></textarea>
               </div>
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" name="btnsub" type="submit">Send Feedback</button>
               <hr class="my-4">
-              <button class="btn btn-lg btn-link btn-block"><a href="viewcomplaint.php" class="col-md-12">View others Feedback</a></button>
+              <button class="btn btn-lg btn-link btn-block"><a href="viewfeedback.php" class="col-md-12">View others Feedback</a></button>
             </form>
           </div>
         </div>
@@ -87,13 +78,12 @@ body{
 
 <?php
 if(isset($_POST['btnsub'])){
-	$nm = $_POST['name'];
+	$email = $_SESSION['email'];
+  $msg = $_POST['feed'];
 	$dt = date('d-m-y');
-	$email = $_POST['email'];
-	$msg = $_POST['feed'];
 	
 	include("connection.php");
-	$q = "insert into feedback values('$nm','$dt','$email','$msg')";
+	$q = "insert into feedback values('$email','$msg','$dt')";
 	
 	mysqli_query($cn,$q);
 	mysqli_close($cn);

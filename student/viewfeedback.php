@@ -52,12 +52,12 @@ body{
           Actions
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item disabled" href="complaint.php">Complaint</a>
-          <a class="dropdown-item disabled" href="Suggestion.php">Suggestions</a>
-          <a class="dropdown-item disabled" href="solution.php">Solutions</a>
-          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="complaint.php">Complaint</a>
+          <a class="dropdown-item" href="Suggestion.php">Suggestions</a>
+          <a class="dropdown-item" href="solution.php">Solutions</a>
+          <!-- <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="login.php">Login</a>
-          <a class="dropdown-item" href="register.php">Register</a>
+          <a class="dropdown-item" href="register.php">Register</a> -->
         </div>
 
 
@@ -86,7 +86,7 @@ body{
                 <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
                     <h5 class="mb-1">All Feedbacks</h5>
 
-                    <?php
+                <?php
                 include('connection.php');
                 $rs = mysqli_query($cn,"select * from feedback");
                 while($a=mysqli_fetch_array($rs))

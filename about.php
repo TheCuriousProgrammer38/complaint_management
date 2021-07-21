@@ -17,7 +17,7 @@ include 'header.php';
 .about-section{
     background: url(img/about.jpg) no-repeat left;
     background-size: 55%;
-    background-color: #84817a;
+    background-color: #353b48;
     overflow: hidden;
     padding: 100px 0;
 }
@@ -33,7 +33,7 @@ include 'header.php';
     margin-bottom: 30px;
     font-size: 30px;
     font-weight: 900;
-}
+} 
 
 .text{
     font-size: 13px;

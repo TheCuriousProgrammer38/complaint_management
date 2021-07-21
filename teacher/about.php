@@ -17,7 +17,7 @@ include 'header.php';
 .about-section{
     background: url(img/about.jpg) no-repeat left;
     background-size: 55%;
-    background-color: #84817a;
+    background-color: #353b48;
     overflow: hidden;
     padding: 100px 0;
 }
@@ -33,7 +33,7 @@ include 'header.php';
     margin-bottom: 30px;
     font-size: 30px;
     font-weight: 900;
-}
+} 
 
 .text{
     font-size: 13px;
@@ -70,23 +70,30 @@ include 'header.php';
           Actions
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="complaint.php">Complaint</a>
-          <a class="dropdown-item" href="Suggestion.php">Suggestions</a>
-          <a class="dropdown-item" href="solution.php">Solutions</a>
-          <!-- <div class="dropdown-divider"></div>
+          <!-- <a class="dropdown-item disabled" href="complaint.php">Complaint</a>
+          <a class="dropdown-item disabled" href="Suggestion.php">Suggestions</a>
+          <a class="dropdown-item disabled" href="solution.php">Solutions</a>
+          <div class="dropdown-divider"></div> -->
           <a class="dropdown-item" href="login.php">Login</a>
-          <a class="dropdown-item" href="register.php">Register</a> -->
+          <a class="dropdown-item" href="register.php">Register</a>
         </div>
 
 
       <li class="nav-item">
-        <a class="nav-link" href="feedback.php">Feedback</a>
+        <a class="nav-link" href="viewfeedback.php">Feedback</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="about.php">About</a>
       </li>
 
     </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="login.php">Sign in</a>
+      </li>
+    </ul>
+    
   </div>
 </nav>
 

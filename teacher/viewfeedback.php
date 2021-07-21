@@ -71,15 +71,15 @@ body{
   $rs = mysqli_query($cn,"select * from feedback");
   while($a=mysqli_fetch_array($rs))
   {
-    $n = $a["name"];
     $e = $a["email"];
+    $d = $a["date"];
     $f = $a["feedback"];
 
     echo "<div class=\"row\"><div class='col-md-4'>";
     echo "<div class=\"img-thumbnail\">";
 
     echo "<div class=\"caption\">";
-    echo "<b>$n</b><br>$e<br><hr>$f</div></div></div></div>";
+    echo "<b>$e</b><br>$d<hr>$f</div></div></div></div>";
   }
   ?>
 
