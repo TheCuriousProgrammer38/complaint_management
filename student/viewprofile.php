@@ -7,7 +7,6 @@ include 'header.php';
 ?>
 <style>
     body{
-    margin-top:20px;
     color: #1a202c;
     text-align: left;
     background-color: #e2e8f0;    
@@ -59,9 +58,61 @@ include 'header.php';
     .shadow-none {
         box-shadow: none!important;
     }
+    .btn a{
+      text-decoration: none;
+      color: #fff;
+    }
 </style>
 </head>
 <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Complaint Management</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">Home</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Actions
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="complaint.php">Complaint</a>
+          <a class="dropdown-item" href="Suggestion.php">Suggestions</a>
+          <a class="dropdown-item" href="solution.php">Solutions</a>
+        </div>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="feedback.php">Feedback</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.php">About</a>
+      </li>
+
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" id="profileDropdown" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" href="#">Profile</a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="profileDropdown">
+          <a class="dropdown-item" href="viewprofile.php">Dashboard</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="logout.php">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
 <?php
 include("connection.php");
 $u = $_SESSION['email'];
@@ -70,6 +121,7 @@ $q = "select * from registration where email='$u'";
 $rs = mysqli_query($cn,$q);
 
 if($a=mysqli_fetch_array($rs)){
+    $ut = $a['usertype'];
     $n = $a['name'];
     $em = $a['email'];
     $ad = $a['address'];
@@ -87,10 +139,9 @@ if($a=mysqli_fetch_array($rs)){
                     <img src="img/profile_img.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4><?php echo $n; ?></h4>
-                      <p class="text-secondary mb-1">Full Stack Developer</p>
-                      <p class="text-muted font-size-sm"><?php echo $ad; ?></p>
-                      <button class="btn btn-outline-primary">Complaints</button>
-                      <button class="btn btn-outline-primary">Suggestions</button>
+                      <p class="text-secondary mb-1"><?php echo $ut; ?></p> 
+                      <button class="btn btn-primary"><a href="managecomplaint.php">Complaints</a></button>
+                      <button class="btn btn-primary"><a href="managesuggestion.php">Suggestions</a></button>
                     </div>
                   </div>
                 </div>

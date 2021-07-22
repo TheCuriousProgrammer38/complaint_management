@@ -62,29 +62,29 @@ $em = $_SESSION['email'];
   </div>
 </nav>
 <div class="col-sm-12">
-<h1 class="title">Your Complaints</h1>
+<h1 class="title">Your Suggestions</h1>
 
 <table class="table table-hover">
 <thead>
 <tr>
-<th>Actions</th><th>Complaint type</th><th>Complaint</th><th>Date</th>
+<th>Actions</th><th>Suggestion type</th><th>Suggestion</th><th>Date</th>
 </tr>
 </thead>
 <tbody>
 <?php
 include("connection.php");
-$q="select * from student_compliant where email='$em'";
+$q="select * from student_suggestion where email='$em'";
 $rs=mysqli_query($cn,$q);
 while($a=mysqli_fetch_array($rs))
 {
-$ct=$a['complain_type'];
-$com=$a['complain'];
-$d=$a['s_date'];
-$u=$a['que_no'];
+$ct=$a['suggestion_type'];
+$com=$a['suggestion'];
+$d=$a['date'];
+$u=$a['sug_no'];
 
 echo "<tr>";
-echo "<td><a href=delc.php?que_no=$u>Delete</a> <a 
-href=upc.php?que_no=$u>Update</a> </td><td>$ct</td><td>
+echo "<td><a href=dels.php?sug_no=$u>Delete</a> <a 
+href=ups.php?sug_no=$u>Update</a> </td><td>$ct</td><td>
 $com</td><td>$d</td>";
 echo "</tr>";
 }

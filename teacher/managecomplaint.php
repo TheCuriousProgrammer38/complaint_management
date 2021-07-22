@@ -18,7 +18,7 @@ $em = $_SESSION['email'];
 <div class="col-sm-12">
 <h1 class="title">Your Complaints</h1>
 
-<table class=table>
+<table class="table table-hover">
 <thead>
 <tr>
 <th>Actions</th><th>Complaint type</th><th>Complaint</th><th>Date</th>

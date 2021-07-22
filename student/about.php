@@ -89,8 +89,15 @@ include 'header.php';
     </ul>
 
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-          <a class="nav-link" href="login.php">Sign in</a>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="profileDropdown" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" href="#">Profile</a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="profileDropdown">
+          <a class="dropdown-item" href="viewprofile.php">Dashboard</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="logout.php">Logout</a>
+        </div>
       </li>
     </ul>
     

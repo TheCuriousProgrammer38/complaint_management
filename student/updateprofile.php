@@ -59,6 +59,10 @@ include 'header.php';
     .shadow-none {
         box-shadow: none!important;
     }
+    .btn a{
+      text-decoration: none;
+      color: #fff;
+    }
 </style>
 </head>
 <body>
@@ -74,6 +78,7 @@ include 'header.php';
         $phn="";
 
         if($a=mysqli_fetch_array($rs)){
+            $ut = $a['usertype'];
             $n = $a['name'];
             $em = $a['email'];
             $ad = $a['address'];
@@ -92,10 +97,9 @@ include 'header.php';
                     <img src="img/profile_img.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4><?php echo $n; ?></h4>
-                      <p class="text-secondary mb-1">Full Stack Developer</p>
-                      <p class="text-muted font-size-sm"><?php echo $ad; ?></p>
-                      <button class="btn btn-outline-primary">Complaints</button>
-                      <button class="btn btn-outline-primary">Suggestions</button>
+                      <p class="text-secondary mb-1"><?php echo $ut; ?></p> 
+                      <button class="btn btn-primary"><a href="managecomplaint.php">Complaints</a></button>
+                      <button class="btn btn-primary">Suggestions</button>
                     </div>
                   </div>
                 </div>
