@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2021 at 10:47 AM
+-- Generation Time: Jul 24, 2021 at 07:13 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -24,6 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin_login`
+--
+
+CREATE TABLE `admin_login` (
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin_login`
+--
+
+INSERT INTO `admin_login` (`email`, `password`) VALUES
+('admin@gmail.com', 'admin');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `feedback`
 --
 
@@ -39,6 +57,7 @@ CREATE TABLE `feedback` (
 
 INSERT INTO `feedback` (`email`, `feedback`, `date`) VALUES
 ('heyitsak@gmail.com', 'this is feedback for demo', '15-07-21'),
+('manesaurabh420@gmail.com', 'this is teachers feedback', '21-07-21'),
 ('omkar@gmail.com', 'this is omkars feedback', '15-07-21');
 
 -- --------------------------------------------------------
@@ -63,9 +82,9 @@ CREATE TABLE `registration` (
 --
 
 INSERT INTO `registration` (`usertype`, `name`, `address`, `email`, `password`, `phone_no`, `security_question`, `security_answer`) VALUES
-('Student', 'akash bhosale', 'mauli', 'heyitsak@gmail.com', '123', '12123123', 'What is your school name?', 'sayajirao'),
-('Teacher', 'saurabh mane', 'satara', 'manesaurabh420@gmail.com', '123', '1231231231', 'What is your school name?', 'anant'),
-('Student', 'omkar kathwate', 'wai', 'omkar@gmail.com', '123', '12312312312', 'What is your middle name?', 'idk'),
+('Student', 'Akash Bhosale', 'Mauli', 'heyitsak@gmail.com', '1234', '1231231231', 'What is your school name?', 'sayajirao'),
+('Teacher', 'Saurabh Mane', 'Satara', 'manesaurabh420@gmail.com', '123', '1231231231', 'What is your school name?', 'anant'),
+('Student', 'Omkar Kathwate', 'Wai', 'omkar@gmail.com', '123', '1231231231', 'What is your middle name?', 'idk'),
 ('Teacher', 'shantanu nimbalkar', 'satara', 'shantya@gmail.com', '123', '1231231231', 'What is your school name?', 'anant');
 
 -- --------------------------------------------------------
@@ -100,10 +119,9 @@ CREATE TABLE `student_compliant` (
 --
 
 INSERT INTO `student_compliant` (`que_no`, `email`, `complain_type`, `complain`, `s_date`) VALUES
-(8, 'heyitsak@gmail.com', 'Complaint over other Faculty', 'this is complaint over faculty (updated)', '12-07-21'),
-(9, 'heyitsak@gmail.com', 'Complaint over Teacher', 'this is complaint over teacher (update)', '12-07-21'),
 (11, 'omkar@gmail.com', 'Choose Complaint Type', 'this is updated omkars complaint', '13-07-21'),
-(12, 'omkar@gmail.com', 'Other Complaint', 'demo complaint', '15-07-21');
+(13, 'heyitsak@gmail.com', 'Complaint over Teacher', 'this is complaint over teacher\r\n', '22-07-21'),
+(14, 'heyitsak@gmail.com', 'Complaint over other Student', 'this is complaint over student', '23-07-21');
 
 -- --------------------------------------------------------
 
@@ -125,7 +143,8 @@ CREATE TABLE `student_suggestion` (
 
 INSERT INTO `student_suggestion` (`sug_no`, `email`, `suggestion_type`, `suggestion`, `date`) VALUES
 (1, 'omkar@gmail.com', 'Suggestion on Syllabus', 'THIS IS SUGGESTION ON SYLLABUS', '15-07-21'),
-(2, 'omkar@gmail.com', 'Suggestion on Campus', 'THIS IS suggestion over campus', '15-07-21');
+(2, 'omkar@gmail.com', 'Suggestion on Campus', 'THIS IS suggestion over campus', '15-07-21'),
+(3, 'heyitsak@gmail.com', 'Complaint over Teacher', 'this is updated suggestion', '22-07-21');
 
 -- --------------------------------------------------------
 
@@ -154,13 +173,6 @@ CREATE TABLE `teacher_complaint` (
   `t_date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `teacher_complaint`
---
-
-INSERT INTO `teacher_complaint` (`que_no`, `email`, `complain_type`, `complain`, `t_date`) VALUES
-(5, 'manesaurabh420@gmail.com', 'Other Complaint', 'this is updated demo complaint', '15-07-21');
-
 -- --------------------------------------------------------
 
 --
@@ -180,12 +192,17 @@ CREATE TABLE `teacher_suggestion` (
 --
 
 INSERT INTO `teacher_suggestion` (`sug_no`, `email`, `suggestion_type`, `suggestion`, `date`) VALUES
-(3, 'manesaurabh420@gmail.com', 'Suggestion on Campus', 'this is suggestion over campus managements\r\n', '15-07-21'),
-(4, 'manesaurabh420@gmail.com', 'Suggestion on Syllabus', 'demo suggestion over syllabus', '15-07-21');
+(3, 'manesaurabh420@gmail.com', 'Choose Suggestions', 'this is suggestion over update', '23-07-21');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin_login`
+--
+ALTER TABLE `admin_login`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Indexes for table `feedback`
@@ -243,13 +260,13 @@ ALTER TABLE `teacher_suggestion`
 -- AUTO_INCREMENT for table `student_compliant`
 --
 ALTER TABLE `student_compliant`
-  MODIFY `que_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `que_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `student_suggestion`
 --
 ALTER TABLE `student_suggestion`
-  MODIFY `sug_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `sug_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `teacher_complaint`

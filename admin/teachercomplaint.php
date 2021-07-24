@@ -42,14 +42,14 @@ include 'header.php';
             </div>
             <div class="wizard">
                 <nav class="list-group list-group-flush">
-                    <a class="list-group-item active" href="index.php">
+                    <a class="list-group-item" href="index.php">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Student Complaints</div>
                             </div>
                         </div>     
                     </a>
-                    <a class="list-group-item" href="teachercomplaint.php">
+                    <a class="list-group-item active" href="#">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Teacher Complaints</div>
@@ -109,20 +109,19 @@ include 'header.php';
                     <tbody>
                     <?php
                     include("connection.php");
-                    $q="select * from student_compliant";
+                    $q="select * from teacher_complaint";
                     $rs=mysqli_query($cn,$q);
                     while($a=mysqli_fetch_array($rs))
                     {
                     $em=$a['email'];
                     $ct=$a['complain_type'];
                     $com=$a['complain'];
-                    $d=$a['s_date'];
+                    $d=$a['t_date'];
                     $u=$a['que_no'];
-                    $totalNumber = mysqli_num_rows($rs);
-                    
+                                        
                     echo "<tr>";
                     echo "<td><a href=delc.php?que_no=$u>Delete</a> <a
-                    href=ans_c_s.php?que_no=$u>Answer</a> </td><td>$em</td><td>$ct</td><td>
+                    href=ans_c_t.php?que_no=$u>Answer</a> </td><td>$em</td><td>$ct</td><td>
                     $com</td><td>$d</td>";
                     echo "</tr>";
                     }
