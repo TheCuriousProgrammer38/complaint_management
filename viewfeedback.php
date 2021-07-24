@@ -58,6 +58,7 @@ body{
           <a class="dropdown-item disabled" href="solution.php">Solutions</a>
           <div class="dropdown-divider"></div> -->
           <a class="dropdown-item" href="login.php">Login</a>
+          <a class="dropdown-item" href="adminLogin.php">Admin</a>
           <a class="dropdown-item" href="register.php">Register</a>
         </div>
 
@@ -76,6 +77,7 @@ body{
           <a class="nav-link" href="login.php">Sign in</a>
       </li>
     </ul>
+    
 
   </div>
 </nav>

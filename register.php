@@ -6,7 +6,6 @@
     include 'header.php';
   ?>
   <link rel="stylesheet" href="stylesignin.css">
-  <script src="validation.js"></script>
   <script>
     function validate(){
       var n = document.frm.name.value;
@@ -72,6 +71,7 @@
           <a class="dropdown-item disabled" href="solution.php">Solutions</a>
           <div class="dropdown-divider"></div> -->
           <a class="dropdown-item" href="login.php">Login</a>
+          <a class="dropdown-item" href="adminLogin.php">Admin</a>
         </div>
 
 

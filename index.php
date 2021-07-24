@@ -29,6 +29,7 @@ include 'header.php';
           <a class="dropdown-item disabled" href="#">Solutions</a>
           <div class="dropdown-divider"></div> -->
           <a class="dropdown-item" href="login.php">Login</a>
+          <a class="dropdown-item" href="adminLogin.php">Admin</a>
           <a class="dropdown-item" href="register.php">Register</a>
         </div>
 

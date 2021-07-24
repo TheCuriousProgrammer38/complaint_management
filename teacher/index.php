@@ -27,9 +27,6 @@ include 'header.php';
           <a class="dropdown-item" href="complaint.php">Complaint</a>
           <a class="dropdown-item" href="Suggestion.php">Suggestions</a>
           <a class="dropdown-item" href="solution.php">Solutions</a>
-          <!-- <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="login.php">Login</a>
-          <a class="dropdown-item" href="register.php">Register</a> -->
         </div>
 
 
@@ -40,6 +37,19 @@ include 'header.php';
         <a class="nav-link" href="about.php">About</a>
       </li>
 
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="profileDropdown" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" href="#">Profile</a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="profileDropdown">
+          <a class="dropdown-item" href="viewprofile.php">Dashboard</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="logout.php">Logout</a>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>
@@ -59,7 +69,7 @@ include 'header.php';
         <h5>Register Complaints</h5>
         <p>You can Register complaints or grievance against issues you are currently facing, 
           We try to give you solution as soon as possible.</p>
-        <a href="">More Info</a>
+        <a href="Complaint.php">More Info</a>
       </div>
     </div>
     <div class="carousel-item">
