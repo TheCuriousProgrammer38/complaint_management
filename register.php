@@ -160,7 +160,7 @@ if(isset($_POST['btnsub'])){
 	$nm = $_POST['name'];
 	$add = $_POST['address'];
   $email = $_POST['email'];
-  $pass = $_POST['pass'];
+  $pass = md5($_POST['pass']);
 	$phn = $_POST['phone'];
 	$secque = $_POST['secque'];
 	$secans = $_POST['secans'];

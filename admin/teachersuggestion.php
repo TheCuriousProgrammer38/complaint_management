@@ -42,7 +42,7 @@ include 'header.php';
             </div>
             <div class="wizard">
                 <nav class="list-group list-group-flush">
-                    <a class="list-group-item active" href="index.php">
+                    <a class="list-group-item" href="index.php">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Student Complaints</div>
@@ -63,7 +63,7 @@ include 'header.php';
                             </div>
                         </div>
                     </a>
-                    <a class="list-group-item" href="teachersuggestion.php">
+                    <a class="list-group-item active" href="teachersuggestion.php">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Teacher Suggestions</div>
@@ -101,28 +101,28 @@ include 'header.php';
                         <tr>
                             <th>Action</th>
                             <th>Email</th>
-                            <th>Complaint type</th>
-                            <th>Complaint</th>
+                            <th>Suggestion type</th>
+                            <th>Suggestion</th>
                             <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
                     include("connection.php");
-                    $q="select * from student_compliant";
+                    $q="select * from teacher_suggestion";
                     $rs=mysqli_query($cn,$q);
                     while($a=mysqli_fetch_array($rs))
                     {
                     $em=$a['email'];
-                    $ct=$a['complain_type'];
-                    $com=$a['complain'];
-                    $d=$a['s_date'];
-                    $u=$a['que_no'];
+                    $st=$a['suggestion_type'];
+                    $sug=$a['suggestion'];
+                    $d=$a['date'];
+                    $u=$a['sug_no'];
                     
                     echo "<tr>";
-                    echo "<td><a href=delc.php?que_no=$u>Delete</a> <a
-                    href=ans_c_s.php?que_no=$u>Answer</a> </td><td>$em</td><td>$ct</td><td>
-                    $com</td><td>$d</td>";
+                    echo "<td><a href=dels_t.php?sug_no=$u>Delete</a> <a
+                    href=ans_s_t.php?sug_no=$u>Answer</a> </td><td>$em</td><td>$st</td><td>
+                    $sug</td><td>$d</td>";
                     echo "</tr>";
                     }
                     ?>

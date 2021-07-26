@@ -9,7 +9,8 @@
   <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="fontawesome/js/all.min.js"></script>
-
+  <!-- Favicon -->
+  <link rel="icon" href="img\icon.png" type="image/png">
 </head>
 <body>
 

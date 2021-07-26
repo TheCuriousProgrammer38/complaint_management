@@ -42,7 +42,7 @@ include 'header.php';
             </div>
             <div class="wizard">
                 <nav class="list-group list-group-flush">
-                    <a class="list-group-item active" href="index.php">
+                    <a class="list-group-item" href="index.php">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Student Complaints</div>
@@ -56,7 +56,7 @@ include 'header.php';
                             </div>
                         </div>     
                     </a>
-                    <a class="list-group-item" href="studentsuggestion.php">
+                    <a class="list-group-item" href="#">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Student Suggestions</div>
@@ -70,7 +70,7 @@ include 'header.php';
                             </div>
                         </div>
                     </a>
-                    <a class="list-group-item" href="feedback.php">
+                    <a class="list-group-item active" href="feedback.php">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Feedback</div>
@@ -101,28 +101,25 @@ include 'header.php';
                         <tr>
                             <th>Action</th>
                             <th>Email</th>
-                            <th>Complaint type</th>
-                            <th>Complaint</th>
+                            <th>Suggestion type</th>
                             <th>Date</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
                     include("connection.php");
-                    $q="select * from student_compliant";
+                    $q="select * from feedback";
                     $rs=mysqli_query($cn,$q);
                     while($a=mysqli_fetch_array($rs))
                     {
                     $em=$a['email'];
-                    $ct=$a['complain_type'];
-                    $com=$a['complain'];
-                    $d=$a['s_date'];
-                    $u=$a['que_no'];
+                    $feed=$a['feedback'];
+                    $d=$a['date'];
+                    $u=$a['feed_id'];
                     
                     echo "<tr>";
-                    echo "<td><a href=delc.php?que_no=$u>Delete</a> <a
-                    href=ans_c_s.php?que_no=$u>Answer</a> </td><td>$em</td><td>$ct</td><td>
-                    $com</td><td>$d</td>";
+                    echo "<td><a href=delf.php?feed_id=$u>Delete</a> <a
+                    href=ansf.php?feed_id=$u>Answer</a> </td><td>$em</td><td>$feed</td><td>$d</td>";
                     echo "</tr>";
                     }
                     ?>

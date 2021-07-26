@@ -46,7 +46,6 @@ body{
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item disabled" href="complaint.php">Complaint</a>
           <a class="dropdown-item disabled" href="Suggestion.php">Suggestions</a>
-          <a class="dropdown-item disabled" href="solution.php">Solutions</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="login.php">Login</a>
           <a class="dropdown-item" href="register.php">Register</a>

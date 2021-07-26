@@ -84,7 +84,6 @@ include 'header.php';
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="complaint.php">Complaint</a>
           <a class="dropdown-item" href="Suggestion.php">Suggestions</a>
-          <a class="dropdown-item" href="solution.php">Solutions</a>
         </div>
 
 

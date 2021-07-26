@@ -34,7 +34,6 @@ $em = $_SESSION['email'];
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="complaint.php">Complaint</a>
           <a class="dropdown-item" href="Suggestion.php">Suggestions</a>
-          <a class="dropdown-item" href="solution.php">Solutions</a>
         </div>
 
 
@@ -67,7 +66,7 @@ $em = $_SESSION['email'];
 <table class="table table-hover">
 <thead>
 <tr>
-<th>Actions</th><th>Suggestion type</th><th>Suggestion</th><th>Date</th>
+<th>Actions</th><th>Suggestion type</th><th>Suggestion</th><th>Date</th><th>Answer</th>
 </tr>
 </thead>
 <tbody>
@@ -80,12 +79,13 @@ while($a=mysqli_fetch_array($rs))
 $ct=$a['suggestion_type'];
 $com=$a['suggestion'];
 $d=$a['date'];
+$ans=$a['answer'];
 $u=$a['sug_no'];
 
 echo "<tr>";
 echo "<td><a href=dels.php?sug_no=$u>Delete</a> <a 
 href=ups.php?sug_no=$u>Update</a> </td><td>$ct</td><td>
-$com</td><td>$d</td>";
+$com</td><td>$d</td><td>$ans</td>";
 echo "</tr>";
 }
 

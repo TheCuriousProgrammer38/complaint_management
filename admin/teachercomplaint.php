@@ -49,28 +49,28 @@ include 'header.php';
                             </div>
                         </div>     
                     </a>
-                    <a class="list-group-item active" href="#">
+                    <a class="list-group-item active" href="teachercomplaint.php">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Teacher Complaints</div>
                             </div>
                         </div>     
                     </a>
-                    <a class="list-group-item" href="#">
+                    <a class="list-group-item" href="studentsuggestion.php">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Student Suggestions</div>
                             </div>
                         </div>
                     </a>
-                    <a class="list-group-item" href="#">
+                    <a class="list-group-item" href="teachersuggestion.php">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Teacher Suggestions</div>
                             </div>
                         </div>
                     </a>
-                    <a class="list-group-item" href="#">
+                    <a class="list-group-item" href="feedback.php">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="d-inline-block font-weight-medium text-uppercase">Feedback</div>
@@ -120,7 +120,7 @@ include 'header.php';
                     $u=$a['que_no'];
                                         
                     echo "<tr>";
-                    echo "<td><a href=delc.php?que_no=$u>Delete</a> <a
+                    echo "<td><a href=delc_t.php?que_no=$u>Delete</a> <a
                     href=ans_c_t.php?que_no=$u>Answer</a> </td><td>$em</td><td>$ct</td><td>
                     $com</td><td>$d</td>";
                     echo "</tr>";
